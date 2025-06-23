@@ -1,0 +1,137 @@
+/* Estilos específicos para el formulario de usuario */
+.user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0;
+}
+
+.user-form__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 0.75rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-medium);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-dark-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    transition: all var(--transition);
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: var(--color-text-light);
+    opacity: 0.7;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.form-input.has-error {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 2px rgba(245, 101, 101, 0.2);
+}
+
+.form-error {
+    color: var(--color-error);
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Estilos de botones (asumiendo que están definidos globalmente o importados en otro lugar) */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.button--primary {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.button--primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+}
+
+.button--secondary {
+    background-color: transparent;
+    color: var(--color-text-medium);
+    border: 1px solid var(--color-border);
+    box-shadow: none;
+}
+
+.button--secondary:hover {
+    background-color: var(--color-dark-light);
+    color: var(--color-text);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes responsivos para el formulario */
+@media (max-width: 480px) {
+    .user-form {
+        padding: 0;
+    }
+
+    .user-form__title {
+        font-size: 1.3rem;
+    }
+
+    .form-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.875rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .button {
+        width: 100%;
+        justify-content: center;
+    }
+}
